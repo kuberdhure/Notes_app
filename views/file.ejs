@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title><%=filename%></title>
+    <style>
+      /* You can add custom styles here if needed */
+    </style>
+  </head>
+
+  <body class="bg-zinc-800">
+    <div class="w-full h-screen p-4">
+      <a href="/" class="text-lg text-blue-600">&lt; Home</a>
+      <div class="flex flex-col p-10">
+        <div class="flex items-center">
+          <h1 class="text-white text-3xl mr-4" id="filename"><%= filename %></h1>
+          <img src="/icons/edit.svg" class="hover:opacity-50" id="edit-btn" />
+        </div>
+        <textarea
+          id="details"
+          disabled
+          class="text-white overflow-y-hidden min-h-80 bg-zinc-800 text-xl my-4"
+        >
+<%= data %></textarea
+        >
+      </div>
+      <div class="flex justify-end mr-10">
+        <button
+          id="saveButton"
+          class="bg-white text-black py-2 px-4 rounded-full w-32 ml-4 hover:bg-transparent hover:text-white"
+          hidden="true"
+          >
+          Save
+        </button>
+        <button
+          id="cancelButton"
+          class="border-white border-2 text-white py-2 px-4 w-32 rounded-full ml-4 hover:bg-white hover:text-black"
+          hidden="true"
+          >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </body>
+
+  <script src="/javascripts/file.js" rel="javascript"></script>
+</html>
